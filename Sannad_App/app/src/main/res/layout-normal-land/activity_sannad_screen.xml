@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".LoginAndRegister.SannadScreen">
+
+    <TextView
+        android:id="@+id/screenTextView1"
+        android:layout_width="210dp"
+        android:layout_height="351dp"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+
+        android:layout_centerInParent="true"
+        android:layout_marginTop="-29dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginRight="102dp"
+        android:layout_marginBottom="331dp"
+        android:fontFamily="@font/pattaya"
+        android:text="@string/S"
+        android:textColor="@color/green"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+
+        android:textSize="300sp" />
+
+    <TextView
+        android:id="@+id/screenTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="199dp"
+
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="169dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="98dp"
+        android:fontFamily="@font/unica_one"
+        android:text="@string/Sannad"
+        android:gravity="center_horizontal"
+
+        android:textColor="@color/white"
+        android:textSize="100sp" />
+
+</RelativeLayout>

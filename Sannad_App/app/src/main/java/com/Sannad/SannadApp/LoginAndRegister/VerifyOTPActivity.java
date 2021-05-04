@@ -1,0 +1,290 @@
+package com.Sannad.SannadApp.LoginAndRegister;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
+
+import com.Sannad.SannadApp.Activity.MainActivity;
+import com.Sannad.SannadApp.Database.UserHelperClass;
+import com.Sannad.SannadApp.Model.GlobalStatic;
+import com.Sannad.SannadApp.R;
+import com.Sannad.SannadApp.TrackerService;
+import com.chaos.view.PinView;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.TaskExecutors;
+import com.google.firebase.FirebaseException;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.TimeUnit;
+
+import lombok.SneakyThrows;
+import pub.devrel.easypermissions.EasyPermissions;
+
+public class VerifyOTPActivity extends AppCompatActivity {
+
+    PinView mPinView;
+    String codeBySystem;
+
+    /**User infos*/
+    String email, username, password, gender, date, phone, whatToDO ;
+
+    /**The address by default*/
+    private String address="Your Address was not accessed because, there was no location permission or your GPS was disabled";
+
+    /**The postal code by default*/
+    private String postalCode="-1";
+
+    /**the city by default*/
+    private String city="No city loaded";
+
+    /**the country by default*/
+    private String country="No country loaded";
+
+    /**on create.*/
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_verify_otp);
+
+        mPinView = findViewById(R.id.pin_view);
+
+        phone = getIntent().getStringExtra("phone");
+        whatToDO = getIntent().getStringExtra("whatToDO");
+        Log.d("test", "onCreate:"+whatToDO);
+        sendVerificationCodeToUser(phone);
+
+
+        //getting data from intent
+        email = getIntent().getStringExtra("email");
+        username = getIntent().getStringExtra("username");
+        password = getIntent().getStringExtra("password");
+        gender = getIntent().getStringExtra("gender");
+        date = getIntent().getStringExtra("date");
+        phone = getIntent().getStringExtra("phone");
+        whatToDO = getIntent().getStringExtra("whatToDo");
+
+
+    }
+
+
+    public void VerifyOTP(View view) {
+
+        if (!isNetworkAvailable()) {
+            Toast.makeText(this, R.string.no_internet_Connection, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+        String code = mPinView.getText().toString();
+        if (!code.isEmpty()) {
+            verifyCode(code);
+        }
+    }
+
+
+    private void sendVerificationCodeToUser(String phoneNo) {
+        PhoneAuthProvider.getInstance().verifyPhoneNumber(
+                phoneNo,        // Phone number to verify
+                60,                 // Timeout duration
+                TimeUnit.SECONDS,   // Unit of timeout
+                TaskExecutors.MAIN_THREAD,// Activity (for callback binding)
+                mCallbacks);        // OnVerificationStateChangedCallbacks
+
+    }
+
+    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks =
+            new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                @Override
+                public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                    super.onCodeSent(s, forceResendingToken);
+                    codeBySystem = s;
+                }
+
+                @Override
+                public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                    String code = phoneAuthCredential.getSmsCode();
+                    if (code != null) {
+
+                        mPinView.setText(code);  //our code contains 6 digits
+                        verifyCode(code);
+                    }
+                }
+
+                @Override
+                public void onVerificationFailed(@NonNull FirebaseException e) {
+                    Toast.makeText(VerifyOTPActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            };
+
+
+    private void verifyCode(String code) {
+        // will check if the code entered by the user is the same as the code which is generated by   the system
+        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(codeBySystem, code);
+        Log.d("test001", "codebysystem: " + codeBySystem + " code: " + code);
+        Log.d("test001", "verifyCode: credential"+credential);
+        signInWithPhoneAuthCredential(credential);
+    }
+
+
+    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
+
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+
+        firebaseAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @SneakyThrows
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+
+                            Toast.makeText(VerifyOTPActivity.this, R.string.Verification_Successfully_Completed, Toast.LENGTH_SHORT).show();
+
+                            if (whatToDO.equals("updateUserPassword")) {
+                                updateOldUsersDate();
+                                Log.d("TAGTAG", "onComplete: updateUserPassword");
+                            } else if (whatToDO.equals("sendUserToMainActivity")) {
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
+                                finish();
+
+                            } else {
+                                storeNewUserToFirebaseDatabase();
+                                Log.d("TAGTAG", "onComplete: storeNewUserToFirebaseDatabase");
+                            }
+
+                        }
+
+
+                        else {
+                            if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
+                                Toast.makeText(VerifyOTPActivity.this, R.string.verification_Not_Completed, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    }
+                });
+    }
+
+    private void updateOldUsersDate() {
+        Intent intent = new Intent(getApplicationContext(), SetNewPasswordActivity.class);
+        intent.putExtra("phone", phone);
+        startActivity(intent);
+        Log.d("TAGTAG", "updateOldUsersDate: ");
+        finish();
+    }
+
+    private void storeNewUserToFirebaseDatabase() throws IOException {
+
+        // Write a message to the database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Users");
+
+        //myRef.setValue("Hello, World!");
+        getLocation();
+        UserHelperClass addNewUser = new UserHelperClass(email, username, password, gender, date, phone, address, GlobalStatic.requestNoPersonalImage,GlobalStatic.accountNoPersonalImage,postalCode,city,country);
+        myRef.child(phone).setValue(addNewUser);
+
+        //add chatroom to firebase
+        //determine the id for every chatroom
+//        FirebaseChatroom addChatroom = new FirebaseChatroom(/*<id for everychatroom>*/);
+//        myRef.child(phone).child("chatroom list").setValue(addChatroom);
+
+        //add the following to your listener when a message is to be sent
+        //add messages to chatroom to firebase
+        //to add messages to chatroom list:
+        //FirebaseMessage message = new Message(<id and other values for constructor>);
+        //myRef.child(phone).child("chatroom list").child("messages").push().setValue(message);
+
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+
+        startActivity(intent);
+        finish();
+
+
+
+
+
+    }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+
+    /**get the location (country, city ,adress , postal code ...)*/
+    private void getLocation() throws IOException {
+        // create a trackerService class , which does every things
+        TrackerService trackerService = new TrackerService(this);
+        //if location permission and gps are enabeled
+        if(trackerService.getLatitude()==null || trackerService.getLongitude()==null){
+            if(EasyPermissions.hasPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,})) {
+                if (((LocationManager) getSystemService(Context.LOCATION_SERVICE)).isProviderEnabled(LocationManager.GPS_PROVIDER))
+                    Toast.makeText(VerifyOTPActivity.this, R.string.your_address_was_not_located, Toast.LENGTH_LONG).show();
+            }
+            //if location permission is enabled and gps not.
+            if (!((LocationManager) getSystemService(Context.LOCATION_SERVICE)).isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                if (EasyPermissions.hasPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION,})) {
+                    Toast.makeText(VerifyOTPActivity.this, R.string.your_GPS_disabled, Toast.LENGTH_LONG).show();
+                }
+            }
+            return;
+        }
+        //show addresses
+
+        Geocoder geocoder;
+        List<Address> addresses;
+        geocoder = new Geocoder(this, Locale.getDefault());
+
+        addresses = geocoder.getFromLocation(trackerService.getLatitude(), trackerService.getLongitude(), 1); // Here 1 represent max location result to returned, by documents it recommended 1 to 5
+
+        String address = addresses.get(0).getAddressLine(0); // If any additional address line present than only, check with max available address lines by getMaxAddressLineIndex()
+        if(address!=null && address!="") {
+            this.address = address;
+        }
+        String postalCode = addresses.get(0).getPostalCode();
+        if(postalCode!=null && postalCode!=""){
+            this.postalCode= postalCode;
+        }
+        String city = addresses.get(0).getLocality();
+        if(city!=null && city!=""){
+            this.city= city;
+        }
+        String country = addresses.get(0).getCountryName();
+        if(country!=null && country!=""){
+            this.country= country;
+        }
+
+
+        String state = addresses.get(0).getAdminArea();
+        String knownName = addresses.get(0).getFeatureName(); // Only if available else return NULL
+
+
+    }
+
+
+}
+

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.AddRequestActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-27dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints">
+
+                <include
+                    android:id="@+id/request_app_bar"
+                    layout="@layout/app_bar_layout" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+
+
+
+                <EditText
+                    android:id="@+id/title_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="57dp"
+                    android:layout_margin="0dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:ems="10"
+                    android:hint="@string/title"
+                    android:inputType="textPersonName" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintAnimationEnabled="true">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/description_editText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:ems="10"
+                        android:textSize="18sp"
+                        android:gravity="start|top"
+                        android:background="@null"
+                        android:textColorHint="@color/green"
+                        android:hint="@string/typeDescription"
+                        android:inputType="textMultiLine" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <ImageView
+                    android:id="@+id/viewImage"
+                    android:layout_width="300dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingTop="25dp"
+                    android:paddingBottom="25dp">
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

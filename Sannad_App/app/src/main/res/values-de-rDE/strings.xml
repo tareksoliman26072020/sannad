@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">Sannad</string>
+<string name="prompt_email">E-Mail</string>
+<string name="prompt_username">Benutzername</string>
+<string name="prompt_password">Passwort</string>
+<string name="prompt_password_again">Passwort bestätigen</string>
+<string name="prompt_msg">Eingabe einer Nachricht</string>
+<string name="action_sign_in">Anmelden oder registrieren</string>
+<string name="action_register">Registrieren</string>
+<string name="action_sign_in_short">Anmelden</string>
+<string name="action_sign_up">Registrieren</string>
+<string name="action_send">Senden</string>
+<string name="error_invalid_email">Diese E-Mail-Adresse ist ungültig</string>
+<string name="error_invalid_password">=Passwort zu kurz oder stimmt nicht überein</string>
+<string name="error_invalid_username">Benutzername zu groß </string>
+<string name="error_incorrect_password">Dieses Passwort ist falsch</string>
+<string name="error_field_required">Dieses Feld ist erforderlich</string>
+<string name="permission_rationale">Für die Bereitstellung von E-Mail-Vervollständigungen sind Berechtigungen für Kontakte erforderlich </string>
+<string name="sample_message">Hallo!</string>
+<string name="log_out">Abmelden</string>
+<string name="Sannad">Sannad</string>
+<string name="Welcome">Bitte loggen Sie sich ein oder melden Sie sich an</string>
+<string name="ForgotPassword">Passwort vergessen?</string>
+
+<string name="enter_phone_number">=Telefonnummer eingeben</string>
+<string name="enter_password">Passwort eingeben</string>
+<string name="remember_me">Erinnern Sie sich an mich</string>
+<string name="forget_password">Passwort vergessen?</string>
+
+<string name="enter_username">Benutzername eingeben</string>
+<string name="enter_email">E-Mail eingeben</string>
+<string name="enter_phoneNumber">Telefonnummer eingeben</string>
+<string name="confirm_password">Passwort bestätigen</string>
+<string name="choose_Picture">Wählen Sie ein Bild</string>
+<string name="title">Titel</string>
+<string name="typeDescription">Beschreibung eingeben</string>
+<string name="discard_and_back">Verwerfen und zurück</string>
+<string name="post">Post</string>
+<string name="account_setting">Konto-Einstellung</string>
+<string name="go_to_home_page">Zur Startseite</string>
+<string name="go_to_chat">Gehen Sie zum Chat</string>
+<string name="exit">Beenden</string>
+<string name="choose_pictures">Bilder auswählen</string>
+<string name="S">S</string>
+<string name="next">Nächste</string>
+<string name="male">Männlich</string>
+<string name="phone_number">Telefonnummer</string>
+<string name="code">Code</string>
+<string name="verification">Überprüfung</string>
+<string name="otp_description">Geben Sie den Code ein, den Sie erhalten haben</string>
+<string name="verify_code">Code verifizieren</string>
+<string name="forgetpasswordDetails">Um Ihr Passwort zurückzusetzen, geben Sie Ihre Telefonnummer ein</string>
+<string name="email_or_phone_number">E-Mail oder Telefon !</string>
+<string name="resetPasswordDetails">Bitte wählen Sie, welche Kontaktdaten wir verwenden sollen, um Ihr Passwort zurückzusetzen</string>
+<string name="new_password">Neues Passwort</string>
+<string name="set_your_new_password">Setzen Sie Ihr neues Passwort</string>
+
+
+<string name="hello_blank_fragment">Hallo Blankfragment</string>
+<string name="no_internet_Connection">Keine Internetverbindung verfügbar. Bitte überprüfen Sie Ihr Netzwerk</string>
+<string name="account_settings">Konto-Einstellungen</string>
+<string name="address">Adresse</string>
+<string name="close">schließen</string>
+<string name="password_updated">Passwort aktualisiert</string>
+<string name="your_password_has_been_successfully_updated">Ihr Passwort wurde erfolgreich aktualisiert</string>
+<string name="login">Anmelden</string>
+<string name="create_account">Konto anlegen</string>
+<string name="choose_gender">Wählen Sie das Geschlecht</string>
+<string name="female">Weiblich</string>
+<string name="others">Sonstige</string>
+<string name="select_your_age">Wählen Sie Ihr Alter</string>
+
+<string name="text">Text</string>
+<string name="show_more">mehr anzeigen</string>
+<string name="show_less">weniger anzeigen</string>
+<string name="edit_request">Bearbeiten der Anfrage</string>
+<string name="username">Benutzername</string>
+<string name="date">Datum</string>
+<string name="old_password">altes Passwort</string>
+<string name="repeat_password">Passwort wiederholen</string>
+<string name="change_password">Passwort ändern</string>
+<string name="filter_requests_by_destination">Anfragen nach Ziel filtern</string>
+<string name="change_username">Benutzername ändern</string>
+<string name="change_your_location">Ändern Sie Ihren Standort</string>
+<string name="Phone_number_does_not_exist">Diese Telefonnummer existiert nicht</string>
+<string name="Enter_Valid_Phone_Number">Bitte geben Sie eine gültige Telefonnummer ein</string>
+<string name="wrong_password"> Falsches Passwort. Versuchen Sie es erneut oder klicken Sie auf Passwort vergessen, um es zurückzusetzen </string>
+<string name="gps_request_message">Ihr GPS scheint deaktiviert zu sein, möchten Sie es aktivieren, um den Zugang an Ihrem Standort zu ermöglichen?</string>
+<string name="yes">Ja</string>
+<string name="no">Nein</string>
+<string name="gps_enabled">Ihr GPS ist bereits aktiviert</string>
+<string name="permission_granted">Erlaubnis bereits erteilt</string>
+<string name="gps_note">Bemerkung: Es ist wichtig, die Erlaubnis für den Standort zuzulassen und danach Ihr GPS zu aktivieren, so dass die Anfragen von Benutzern je nach deren Standort gefiltert werden können.\\\n \\n Wollen Sie es zulassen?</string>
+<string name="gpsRequestPermission">Bitte erlauben Sie die Standorterlaubnis! \\\n \\n</string>
+<string name="select_Gender">Bitte wählen Sie das Geschlecht</string>
+<string name="agehasTobe">Alter muss mindestens 13 Jahre betragen</string>
+<string name="password_is_not_valid">Passwort ist nicht gültig</string>
+<string name="Verification_Successfully_Completed">Verifizierung ist erfolgreich abgeschlossen</string>
+<string name="verification_Not_Completed">Überprüfung nicht abgeschlossen! Versuchen Sie es noch einmal.</string>
+<string name="your_address_was_not_located">Ihre Adresse wurde nicht lokalisiert, Ihr GPS bestimmt immer noch Ihren aktuellen Standort, Sie können ihn erneut über Ihre Buchhaltung aktualisieren.</string>
+<string name="your_GPS_disabled">Ihre Adresse wurde nicht geortet, Ihr GPS wurde deaktiviert.</string>
+</resources>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sannad</string>
+    <string name="prompt_email">Courrier électronique</string>
+    <string name="prompt_username">Nom d&amp;#x27;utilisateur</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="prompt_password_again">Confirmer le mot de passe</string>
+    <string name="prompt_msg">Typez un message</string>
+    <string name="action_sign_in">S&amp;#x27;inscrire ou s&amp;#x27;enregistrer</string>
+    <string name="action_register">S&amp;#x27;inscrire</string>
+    <string name="action_sign_in_short">Connexion</string>
+    <string name="action_sign_up">S&amp;#x27;inscrire</string>
+    <string name="action_send">Envoyer</string>
+    <string name="error_invalid_email">Cette adresse électronique n&amp;#x27;est pas valide</string>
+    <string name="error_invalid_password">Mot de passe trop court ou ne correspond pas</string>
+    <string name="error_invalid_username">Nom d&amp;#x27;utilisateur trop grand </string>
+    <string name="error_incorrect_password">Ce mot de passe est incorrect</string>
+    <string name="error_field_required">Ce champ est obligatoire</string>
+    <string name="permission_rationale">&amp;quot;Les autorisations de contact sont nécessaires pour fournir des compléments d&amp;#x27;information par courrier électronique.&amp;quot;\n    </string>
+    <string name="sample_message">Bonjour !</string>
+    <string name="log_out">Log Out</string>
+    <string name="Sannad">Sannad</string>
+    <string name="Welcome">Veuillez vous connecter ou vous inscrire</string>
+    <string name="ForgotPassword">Oublié votre mot de passe ?</string>
+
+    <string name="enter_phone_number">Entrez votre numéro de téléphone</string>
+    <string name="enter_password">Entrer le mot de passe</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forget_password">Oublier votre mot de passe ?</string>
+
+    <string name="enter_username">Entrez votre nom d&amp;#x27;utilisateur</string>
+    <string name="enter_email">Envoyer un courriel</string>
+    <string name="enter_phoneNumber">Entrer le numéro de téléphone</string>
+    <string name="confirm_password">Confirmer le mot de passe</string>
+    <string name="choose_Picture">Choisissez une image</string>
+    <string name="title">Titre</string>
+    <string name="typeDescription">Type a Description</string>
+    <string name="discard_and_back">Discuter et revenir</string>
+    <string name="post">Poste</string>
+    <string name="account_setting">Compte</string>
+    <string name="go_to_home_page">Aller à la page d&amp;#x27;accueil</string>
+    <string name="go_to_chat">Allez discuter</string>
+    <string name="exit">Sortie</string>
+    <string name="choose_pictures">Choisissez des images</string>
+    <string name="S">S</string>
+    <string name="next">Suivant</string>
+    <string name="male">Homme</string>
+    <string name="phone_number">Numéro de téléphone</string>
+    <string name="code">Code</string>
+    <string name="verification">Vérification</string>
+    <string name="otp_description">Entrez le code que vous avez reçu</string>
+    <string name="verify_code">Vérifier le code</string>
+    <string name="forgetpasswordDetails">Pour réinitialiser votre mot de passe, entrez votre numéro de téléphone</string>
+    <string name="email_or_phone_number">Courrier ou téléphone !</string>
+    <string name="resetPasswordDetails">Sélectionnez les coordonnées que nous devons utiliser pour réinitialiser votre mot de passe</string>
+    <string name="new_password">Nouveau mot de passe</string>
+    <string name="set_your_new_password">Sélectionnez votre nouveau mot de passe</string>
+
+
+    <string name="hello_blank_fragment">Bonjour fragment vierge</string>
+    <string name="no_internet_Connection">&amp;quot;Pas de connexion internet disponible. Veuillez vérifier votre réseau&amp;quot;</string>
+    <string name="account_settings">Paramètres des comptes</string>
+    <string name="address">adresse</string>
+    <string name="close">fermer</string>
+    <string name="password_updated">Mot de passe mis à jour</string>
+    <string name="your_password_has_been_successfully_updated">Votre mot de passe a été mis à jour avec succès</string>
+    <string name="login">Login</string>
+    <string name="create_account">Créer un compte</string>
+    <string name="choose_gender">Choisir le genre</string>
+    <string name="female">Femme</string>
+    <string name="others">Autres</string>
+    <string name="select_your_age">Sélectionnez votre âge</string>
+
+    <string name="text">texte</string>
+    <string name="show_more">en savoir plus</string>
+    <string name="show_less">montre moins</string>
+    <string name="edit_request">demande de modification</string>
+    <string name="username">nom d&amp;#x27;utilisateur</string>
+    <string name="date">date</string>
+    <string name="old_password">ancien mot de passe</string>
+    <string name="repeat_password">répéter le mot de passe</string>
+    <string name="change_password">changer le mot de passe</string>
+    <string name="filter_requests_by_destination">filtre des demandes par destination</string>
+    <string name="change_username">changer de nom d&amp;#x27;utilisateur</string>
+    <string name="change_your_location">changer de lieu</string>
+    <string name="Phone_number_does_not_exist">Ce numéro de téléphone n&amp;#x27;existe pas</string>
+    <string name="Enter_Valid_Phone_Number">Veuillez saisir un numéro de téléphone valide</string>
+    <string name="wrong_password">\\\&amp;quot; Mauvais mot de passe. Essayez à nouveau ou cliquez sur &amp;quot;Mot de passe oublié&amp;quot; pour le réinitialiser \\&amp;quot;.</string>
+    <string name="gps_request_message">Votre GPS semble être désactivé, voulez-vous l&amp;#x27;activer pour permettre l&amp;#x27;accès sur votre position ?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="gps_enabled">Votre GPS est déjà activé</string>
+    <string name="permission_granted">Permission déjà accordée</string>
+    <string name="gps_note">Note : Il est important d&amp;#x27;autoriser la permission de localisation et ensuite d&amp;#x27;activer votre GPS afin que les demandes des utilisateurs puissent être filtrées, en fonction de la localisation des utilisateurs.\n Voulez-vous l&amp;#x27;autoriser ?</string>
+    <string name="gpsRequestPermission">S&amp;#x27;il vous plaît, accordez la permission de localisation ! !</string>
+    <string name="select_Gender">Veuillez sélectionner le sexe</string>
+    <string name="agehasTobe">L&amp;#x27;âge doit être d&amp;#x27;au moins 13 ans</string>
+    <string name="password_is_not_valid">Mot de passe non valide</string>
+    <string name="Verification_Successfully_Completed">La vérification est terminée avec succès</string>
+    <string name="verification_Not_Completed">Vérification non terminée ! Essayez à nouveau.</string>
+    <string name="your_address_was_not_located">Votre adresse n&amp;#x27;a pas été localisée, votre GPS est toujours en train de déterminer votre position actuelle, vous pouvez la mettre à jour à nouveau à partir de votre comptabilité.</string>
+    <string name="your_GPS_disabled">Votre adresse n&amp;#x27;a pas été localisée, votre GPS a été désactivé.</string>
+
+</resources>

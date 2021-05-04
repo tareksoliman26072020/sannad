@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:padding="30dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+
+        <TextView
+            android:id="@+id/register_titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/muli_black"
+            android:text="@string/create_account"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:transitionName="transition_TitleText"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="80dp"
+
+            >
+
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/countryCodePicker"
+                android:padding="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_showFlag="true"
+                app:ccp_showNameCode="true"
+                app:ccp_showFullName="true"
+                android:background="@drawable/green_border"
+
+
+
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:hint="@string/phone_number"
+                android:id="@+id/register_username"
+
+
+                app:hintTextColor="@color/white"
+                app:boxStrokeColor="@color/green"
+                app:boxStrokeWidthFocused="2dp"
+                app:startIconDrawable="@drawable/phone"
+                app:startIconTint="@color/green"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/green"
+
+
+
+                >
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/LoginPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/muli"
+                    android:inputType="number"
+
+
+                    android:textColor="@color/white">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            
+
+
+
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:onClick="NextSignUp"
+            android:id="@+id/register_next_button"
+            android:background="@color/green"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:transitionName="transition_next_btn"
+
+            />
+
+        <ProgressBar
+            android:id="@+id/register3ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"/>
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>

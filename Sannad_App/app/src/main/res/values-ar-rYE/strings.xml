@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">سند</string>
+    <string name="prompt_email">البريد الإلكتروني</string>
+    <string name="prompt_username">اسم المستخدم</string>
+    <string name="prompt_password">كلمه السر</string>
+    <string name="prompt_password_again">تأكيد كلمة المرور</string>
+    <string name="prompt_msg">اكتب رسالة</string>
+    <string name="action_sign_in">تسجيل الدخول أو التسجيل</string>
+    <string name="action_register">تسجيل</string>
+    <string name="action_sign_in_short">تسجيل الدخول</string>
+    <string name="action_sign_up">سجل</string>
+    <string name="action_send">إرسال</string>
+    <string name="error_invalid_email">عنوان البريد الإلكتروني هذا غير صالح</string>
+    <string name="error_invalid_password">كلمة المرور قصيرة جدًا أو غير متطابقة</string>
+    <string name="error_invalid_username">اسم المستخدم كبير جدًا</string>
+    <string name="error_incorrect_password">كلمة المرور هذه غير صحيحة</string>
+    <string name="error_field_required">هذه الخانة مطلوبه</string>
+    <string name="permission_rationale">"أذونات جهات الاتصال مطلوبة لتوفير البريد الإلكتروني         الإكمالات ".</string>
+    <string name="sample_message">مرحبا!</string>
+    <string name="log_out">تسجيل خروج</string>
+    <string name="Sannad">سند</string>
+    <string name="Welcome">الرجاء الدخول أو الاشتراك</string>
+    <string name="ForgotPassword">نسيت رقمك السري؟</string>
+
+    <string name="enter_phone_number">أدخل رقم الهاتف</string>
+    <string name="enter_password">أدخل كلمة المرور</string>
+    <string name="remember_me">تذكرنى</string>
+    <string name="forget_password">نسيت كلمة المرور؟</string>
+
+    <string name="enter_username">ادخل اسم المستخدم</string>
+    <string name="enter_email">أدخل البريد الإلكتروني</string>
+    <string name="enter_phoneNumber">أدخل رقم الهاتف</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="choose_Picture">اختيار صورة</string>
+    <string name="title">عنوان</string>
+    <string name="typeDescription">اكتب وصفا</string>
+    <string name="discard_and_back">تجاهل والعودة</string>
+    <string name="post">بريد</string>
+    <string name="account_setting">إعدادات الحساب</string>
+    <string name="go_to_home_page">انتقل إلى الصفحة الرئيسية</string>
+    <string name="go_to_chat">انتقل إلى الدردشة</string>
+    <string name="exit">خروج</string>
+    <string name="choose_pictures">اختر الصور</string>
+    <string name="S">س</string>
+    <string name="next">التالى</string>
+    <string name="male">الذكر</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="code">الشفرة</string>
+    <string name="verification">التحقق</string>
+    <string name="otp_description">أدخل الرمز الذي تلقيته</string>
+    <string name="verify_code">التحقق من كود</string>
+    <string name="forgetpasswordDetails">لإعادة تعيين كلمة المرور الخاصة بك ، أدخل رقم هاتفك</string>
+    <string name="email_or_phone_number">بريد الكتروني او هاتف !</string>
+    <string name="resetPasswordDetails">يرجى تحديد تفاصيل الاتصال التي يجب أن نستخدمها لإعادة تعيين كلمة المرور الخاصة بك</string>
+    <string name="new_password">كلمة سر جديدة</string>
+    <string name="set_your_new_password">قم بتعيين كلمة المرور الجديدة</string>
+
+
+    <string name="hello_blank_fragment">مرحبًا بجزء فارغ</string>
+    <string name="no_internet_Connection">"لا يتوفر اتصال بالإنترنت. يرجى التحقق من الشبكة"</string>
+    <string name="account_settings">إعدادت الحساب</string>
+    <string name="address">عنوان</string>
+    <string name="close">أغلق</string>
+    <string name="password_updated">تم تحديث كلمة السر</string>
+    <string name="your_password_has_been_successfully_updated">لقد تم تحديث كلمة السر الخاصة بك بنجاح</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="create_account">إنشاء حساب</string>
+    <string name="choose_gender">اختر الجنس</string>
+    <string name="female">أنثى</string>
+    <string name="others">الآخرين</string>
+    <string name="select_your_age">حدد عمرك</string>
+
+    <string name="text">نص</string>
+    <string name="show_more">أظهر المزيد</string>
+    <string name="show_less">تظهر أقل</string>
+    <string name="edit_request">طلب تعديل</string>
+    <string name="username">اسم المستخدم</string>
+    <string name="date">تاريخ</string>
+    <string name="old_password">كلمة المرور القديمة</string>
+    <string name="repeat_password">اعد كلمة السر</string>
+    <string name="change_password">غير كلمة السر</string>
+    <string name="filter_requests_by_destination">طلبات التصفية حسب الوجهة</string>
+    <string name="change_username">غير اسم المستخدم</string>
+    <string name="change_your_location">تغيير موقعك</string>
+    <string name="Phone_number_does_not_exist">رقم الهاتف هذا غير موجود</string>
+    <string name="Enter_Valid_Phone_Number">الرجاء إدخال رقم هاتف صحيح</string>
+    <string name="wrong_password">\"كلمة مرور خاطئة. حاول مرة أخرى أو انقر فوق نسيت كلمة المرور لإعادة تعيينها \"</string>
+    <string name="gps_request_message">يبدو أن نظام تحديد المواقع العالمي (GPS) لديك معطّل ، هل تريد تمكينه للسماح بالوصول إلى موقعك؟</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+    <string name="gps_enabled">تم تمكين GPS الخاص بك بالفعل</string>
+    <string name="permission_granted">تم منح الإذن بالفعل</string>
+    <string name="gps_note">ملاحظة: من المهم السماح بإذن الموقع وبعد ذلك لتمكين نظام تحديد المواقع العالمي (GPS) الخاص بك بحيث يمكن تصفية طلبات المستخدمين ، اعتمادًا على مواقع المستخدمين. \n\nهل تريد السماح بذلك؟</string>
+    <string name="gpsRequestPermission">الرجاء منح إذن الموقع !! \n\n</string>
+    <string name="select_Gender">يرجى تحديد الجنس</string>
+    <string name="agehasTobe">يجب أن يكون العمر 13 عامًا على الأقل</string>
+    <string name="password_is_not_valid">كلمة المرور غير صالحة</string>
+    <string name="Verification_Successfully_Completed">تم إكمال التحقق بنجاح</string>
+    <string name="verification_Not_Completed">لم يكتمل التحقق! حاول مجددا.</string>
+    <string name="your_address_was_not_located">لم يتم تحديد عنوانك ، ولا يزال GPS الخاص بك يحدد موقعك الحالي ، يمكنك تحديثه مرة أخرى من إعداد حساباتك.</string>
+    <string name="your_GPS_disabled">عنوانك غير موجود ، تم تعطيل GPS الخاص بك.</string>
+
+</resources>

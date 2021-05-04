@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "624346653563",
+    "firebase_url": "https://sannadapp.firebaseio.com",
+    "project_id": "sannadapp",
+    "storage_bucket": "sannadapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:624346653563:android:52fed36ffe1ff215ab93de",
+        "android_client_info": {
+          "package_name": "com.Sannad.SannadApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "624346653563-mcj1evqfn4vevqnpm41aho7io27f9pki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBba6gKbWhYSUXlHe0L3-uJpkoqJg6dnxw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "624346653563-mcj1evqfn4vevqnpm41aho7io27f9pki.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
